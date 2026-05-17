@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leticia Aragão | Art Director & UX/UI Designer</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            light: '#f5f5f5',
+                            accent: '#3b82f6', // A nice blue accent, you can change this
+                            gray: '#171717',
+                            grayHover: '#262626'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(calc(-250px * 7))' } // Adjust based on logo count and width
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        /* Custom glow effect for the skills section */
+        .glow-card {
+            background: rgba(23, 23, 23, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-card:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* Folder shape styling for the about section */
+        .folder-tab {
+            clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+        }
+
+        /* Hide scrollbar for the infinite logo scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter">Leticia<span class="text-white/50">Aragão</span></a>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-white/70">
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+            </nav>
+            <a href="mailto:leticiaoaragao@gmail.com" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-200 transition-colors">
+                Let's Talk
+            </a>
+            <!-- Mobile Menu Button (simplified for this example) -->
+            <button class="md:hidden text-white">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen flex items-center pt-24 pb-12 px-6">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="order-2 lg:order-1 flex flex-col items-start space-y-8 z-10">
+                    <div class="space-y-2">
+                        <h2 class="text-white/60 font-medium tracking-widest uppercase text-sm mb-4">Art Director & UX/UI Designer</h2>
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1]">
+                            Crafting<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Digital</span><br>
+                            Experiences
+                        </h1>
+                    </div>
+                    
+                    <p class="text-lg md:text-xl text-white/60 max-w-lg leading-relaxed">
+                        I believe that design is a powerful tool to connect, inspire and transform, that's why I create with the aim of generating great results and memorable experiences.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#work" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black bg-white rounded-full hover:bg-gray-200 transition-all hover:scale-105">
+                            See my work
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image (Placeholder for Leticia's Photo) -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+                    <!-- Decorative background blur -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/5 rounded-full blur-3xl -z-10"></div>
+                    
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl animate-float">
+                        <img src="img/leticia_profissional.jpg" alt="Leticia Aragão" class="w-full h-full object-cover transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 border-y border-white/5 overflow-hidden bg-brand-gray/30 relative">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-brand-dark to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-dark to-transparent z-10"></div>
+            
+            <div class="flex items-center opacity-40 hover:opacity-100 transition-opacity duration-500">
+                <!-- Using a wrapper that is wider than viewport to animate -->
+                <div class="flex w-[200%] animate-scroll items-center gap-16 md:gap-32 px-16">
+                    <!-- Original set -->
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Oster</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Coleman</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Taschibra</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Mueller</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Unifique</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">O Tal do Prazer</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">LPQV</h3>
+                    
+                    <!-- Duplicated set for infinite loop -->
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Oster</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Coleman</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Taschibra</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Mueller</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">Unifique</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">O Tal do Prazer</h3>
+                    <h3 class="text-xl md:text-3xl font-bold whitespace-nowrap">LPQV</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">My Expertise</h2>
+                    <p class="text-white/50 text-lg">Bringing ideas to life across various disciplines.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    <!-- Tilted glow rectangles -->
+                    <div class="glow-card rounded-2xl p-8 flex items-center justify-center text-center -rotate-2 hover:rotate-0 transform transition duration-300 min-h-[160px]">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-tight">LOGO</h3>
+                    </div>
+                    
+                    <div class="glow-card rounded-2xl p-8 flex items-center justify-center text-center rotate-1 hover:rotate-0 transform transition duration-300 min-h-[160px]">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-tight">BRAND IDENTITY</h3>
+                    </div>
+                    
+                    <div class="glow-card rounded-2xl p-8 flex items-center justify-center text-center -rotate-1 hover:rotate-0 transform transition duration-300 min-h-[160px]">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-tight">ART DIRECTION</h3>
+                    </div>
+                    
+                    <div class="glow-card rounded-2xl p-8 flex items-center justify-center text-center rotate-2 hover:rotate-0 transform transition duration-300 min-h-[160px]">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-tight">SOCIAL MEDIA</h3>
+                    </div>
+                    
+                    <div class="glow-card rounded-2xl p-8 flex items-center justify-center text-center -rotate-2 hover:rotate-0 transform transition duration-300 min-h-[160px]">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-tight">UI DESIGN</h3>
+                    </div>
+                    
+                    <div class="glow-card rounded-2xl p-8 flex items-center justify-center text-center rotate-1 hover:rotate-0 transform transition duration-300 min-h-[160px]">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-tight">MOTION</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="py-24 px-6 bg-brand-gray/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Selected<br>Work</h2>
+                    <span class="text-white/40 hidden md:block">(04 Projects)</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <!-- Project 1 -->
+                    <div class="group relative overflow-hidden rounded-3xl bg-brand-gray aspect-[4/3] flex flex-col justify-end p-8 transition-transform hover:-translate-y-2 duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+                        <!-- Placeholder Image -->
+                        <img src="img/tachiba_img.png" alt="Taschibra Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="relative z-20 flex justify-between items-end w-full">
+                            <div>
+                                <p class="text-white/70 text-sm font-medium mb-2">Social Media</p>
+                                <h3 class="text-3xl font-bold text-white">Taschibra</h3>
+                            </div>
+                            <button class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:scale-110">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="group relative overflow-hidden rounded-3xl bg-brand-gray aspect-[4/3] flex flex-col justify-end p-8 transition-transform hover:-translate-y-2 duration-500 md:translate-y-12">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+                        <img src="img/o_tal_do_prazer_img.png" alt="O Tal do Prazer Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="relative z-20 flex justify-between items-end w-full">
+                            <div>
+                                <p class="text-white/70 text-sm font-medium mb-2">Visual Identity</p>
+                                <h3 class="text-3xl font-bold text-white">O Tal do Prazer</h3>
+                            </div>
+                            <button class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:scale-110">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="group relative overflow-hidden rounded-3xl bg-brand-gray aspect-[4/3] flex flex-col justify-end p-8 transition-transform hover:-translate-y-2 duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+                        <img src="img/julia_img_foto.jpg" alt="Julia Jaques Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="relative z-20 flex justify-between items-end w-full">
+                            <div>
+                                <p class="text-white/70 text-sm font-medium mb-2">Photography, Retouch</p>
+                                <h3 class="text-3xl font-bold text-white">Julia Jaques</h3>
+                            </div>
+                            <button class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:scale-110">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="group relative overflow-hidden rounded-3xl bg-brand-gray aspect-[4/3] flex flex-col justify-end p-8 transition-transform hover:-translate-y-2 duration-500 md:translate-y-12">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+                        <img src="img/lpqv_social_midia.webp" alt="LPQV Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="relative z-20 flex justify-between items-end w-full">
+                            <div>
+                                <p class="text-white/70 text-sm font-medium mb-2">Social Media, Video Editing</p>
+                                <h3 class="text-3xl font-bold text-white">LPQV</h3>
+                            </div>
+                            <button class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:scale-110">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-32 px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Folder Style Layout -->
+                <div class="relative">
+                    <!-- Folder Tab -->
+                    <div class="folder-tab bg-brand-gray w-48 h-12 absolute -top-11 left-4 z-0 rounded-t-xl flex items-center px-6">
+                        <span class="text-white/50 text-sm font-medium uppercase tracking-wider">Profile</span>
+                    </div>
+                    
+                    <!-- Main Folder Body -->
+                    <div class="bg-brand-gray border border-white/5 rounded-2xl rounded-tl-none p-8 md:p-16 relative z-10 shadow-2xl">
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                            <!-- Left Column: Photo & Details -->
+                            <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+                                <div class="w-48 h-48 rounded-2xl overflow-hidden border border-white/10">
+                                    <img src="img/leticia_foto_pessoal.jpg" alt="Leticia Aragão" class="w-full h-full object-cover">
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-3xl font-bold mb-1">Leticia Aragão</h3>
+                                    <p class="text-white/60 mb-1">Art Director</p>
+                                    <p class="text-white/60">UX/UI Design</p>
+                                </div>
+
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors">
+                                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                                </a>
+                            </div>
+
+                            <!-- Right Column: Bio & Tools -->
+                            <div class="lg:col-span-8 flex flex-col justify-center space-y-10">
+                                <div>
+                                    <h2 class="text-4xl font-bold tracking-tighter mb-6">About me</h2>
+                                    <p class="text-lg md:text-xl text-white/70 leading-relaxed font-light">
+                                        A lifelong learner, I graduated in Graphic Design, postgraduated in Strategic Management in UX Design and a postgraduate degree in Audiovisual Production. I face challenges with courage and am driven by the constant search for excellence and professional overcoming, working in harmony with visionary teams to achieve good results.
+                                    </p>
+                                </div>
+
+                                <!-- Tools / Software -->
+                                <div>
+                                    <h4 class="text-sm font-medium text-white/40 uppercase tracking-widest mb-4">Tools I use</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white/80 bg-white/5 hover:bg-white/10 transition-colors">Photoshop</span>
+                                        <span class="px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white/80 bg-white/5 hover:bg-white/10 transition-colors">Figma</span>
+                                        <span class="px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white/80 bg-white/5 hover:bg-white/10 transition-colors">Illustrator</span>
+                                        <span class="px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white/80 bg-white/5 hover:bg-white/10 transition-colors">ChatGPT</span>
+                                        <span class="px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white/80 bg-white/5 hover:bg-white/10 transition-colors">After Effects</span>
+                                        <span class="px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white/80 bg-white/5 hover:bg-white/10 transition-colors">Capcut</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-24 px-6 border-t border-white/10 relative overflow-hidden">
+            <!-- Background glow -->
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-white/5 rounded-t-full blur-3xl -z-10"></div>
+            
+            <div class="max-w-4xl mx-auto text-center space-y-12">
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">Let's create something<br><span class="text-white/40">amazing together.</span></h2>
+                
+                <div>
+                    <a href="mailto:leticiaoaragao@gmail.com" class="group relative inline-flex items-center justify-center px-8 py-5 text-lg font-medium text-black bg-white rounded-full overflow-hidden transition-all hover:scale-105">
+                        <span class="relative z-10 flex items-center">
+                            leticiaoaragao@gmail.com
+                            <span class="ml-4 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center group-hover:-rotate-45 transition-transform duration-300">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="pt-16 flex flex-col md:flex-row justify-between items-center text-sm text-white/40 border-t border-white/10">
+                    <p>&copy; 2026 Leticia Aragão. All rights reserved.</p>
+                    <div class="flex gap-6 mt-4 md:mt-0">
+                        <a href="https://linkedin.com" class="hover:text-white transition-colors">LinkedIn</a>
+                        <a href="#" class="hover:text-white transition-colors">Behance</a>
+                        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Simple script to handle smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>'
